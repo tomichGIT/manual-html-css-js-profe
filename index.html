@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual Diseño Web</title>
 
+    <link rel="stylesheet" href="css/styles.css">
+
     <style>
         /* Set box-sizing property to border-box */
         * {
@@ -63,6 +65,7 @@
                 <li><a href="#artLinks">Links</a></li>
                 <li><a href="#artTablas">Tablas</a></li>
                 <li><a href="#artColores">Colores</a></li>
+                <li><a href="#artLayout">Layout Tags</a></li>
                 <!--
                 <li><a href="#artSelectores">Selectores</a></li>
                 <li><a href="#artImages">Imágenes</a></li>
@@ -275,6 +278,66 @@
                     </tfoot>
                 </table>
                 <hr>
+            </article>
+
+            <!-- Artículo de Layout -->
+            <article id="artLayout">
+
+                <h3>Layout Tags</h3>
+                <h3>Las Tags de Disposición/Layout nos permiten acomodar nuestros elementos en la web. Segmentando nuestrá página en partes, es mas fácil identificar y desarrollar la misma.</h3>
+
+                <div style="text-align:center;">
+                    <img src="img/layout.png" alt="">
+                </div>
+
+                <style>
+                    #tablaLayout tr:nth-child(even) { background: #ddd }
+                    #tablaLayout tr:nth-child(odd) { background: #fff}
+                </style>
+                <table id="tablaLayout" style="border: 1px solid black; margin: auto; width: 70%;">
+                    <tbody>
+                      <tr class="bg-light">
+                        <th style="width:120px">Etiqueta</th>
+                        <th style="">Description</th>
+                      </tr>
+                      <tr>
+                        <td><a class="code-link" href="#">&lt;header&gt;</a></td>
+                        <td>Defines a header section on a page or a section of a page</td>
+                      </tr>
+                      <tr>
+                        <td><a class="code-link" href="#">&lt;main&gt;</a></td>
+                        <td>Creates a container for the main content of the page</td>
+                      </tr>
+                      <tr>
+                        <td><a class="code-link" href="#">&lt;footer&gt;</a></td>
+                        <td>Defines a footer section on a page or a section of a page</td>
+                      </tr>
+                      <tr>
+                        <td><a class="code-link" href="#">&lt;nav&gt;</a></td>
+                        <td>Creates a container for navigation links</td>
+                      </tr>
+                      <tr>
+                        <td><a class="code-link" href="#">&lt;aside&gt;</a></td>
+                        <td>Creates a content area that is related to the primary content on a page</td>
+                      </tr>
+                      <tr>
+                        <td><a class="code-link" href="#">&lt;article&gt;</a></td>
+                        <td>Defines a container for independent and self contained text</td>
+                      </tr>
+                      <tr>
+                        <td><a class="code-link" href="#">&lt;section&gt;</a></td>
+                        <td>Defines a piece of content that can stand on its own</td>
+                      </tr>
+                      <tr>
+                        <td><a class="code-link" href="#">&lt;div&gt;</a></td>
+                        <td>Creates a division or section on a page</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <br>
+                  Fuente para mas información: <a href="https://www.dofactory.com/html/tag-groups/layout">tag-groups Layouts</a>
+                  <hr>
             </article>
 
             <!-- Artículo de Colores -->
