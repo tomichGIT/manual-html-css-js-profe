@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Diseño Web</title>
+
+    <style>
+        /* Set box-sizing property to border-box */
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+            margin:0px;
+        }
+
+        #miSitio {
+            /* margin:0px; */
+            background-color: #f2f2f2;
+            color:darkslategray
+        }
+    
+        /* Sidebar styles */
+        .sidebar {
+            width: 250px;
+            /* display: inline-block; */
+            background-color: lightgrey;
+            color:darkgray;
+            vertical-align: top;
+            height: 100vh;
+            position: fixed; /* Fix the sidebar position */
+            top: 0; /* Place it at the top of the viewport */
+            padding: 10px;
+        }
+    
+        /* Content styles */
+        .content {
+            /* width: calc(100% - 250px); */
+            /* display: inline-block; */
+            padding: 10px;
+            position:absolute; /* Fix the sidebar position */
+            left: 250px;
+        }
+
+        .content article {
+            margin:10px;
+        }
+
+        .sidebar ul {
+            margin: 10px;
+        }
+      </style>
+</head>
+<body>
+
+    <div id="miSitio" >
+        <!-- sideBar / Menu -->
+        <div sty2le="width:250px; display:inline-block; vertical-align: top; margin:0px; padding:0px;" class="sidebar">
+            <h3>Menu de Artículos</h3>
+            <ul style="margin:0px;">
+                <li><a href="#artTextos">Texto</a></li>
+                <li><a href="#artLinks">Links</a></li>
+                <li><a href="#artTablas">Tablas</a></li>
+                <li><a href="#artColores">Colores</a></li>
+                <!--
+                <li><a href="#artSelectores">Selectores</a></li>
+                <li><a href="#artImages">Imágenes</a></li>
+                <li><a href="#fuentes">fuentes</a></li>
+                <li><a href="#codigo">Código</a></li> -->
+            </ul>
+
+        </div><!-- mind the gap of the space. 
+            
+            Contenido 
+        --><div sty2le="width:calc(100% - 250px); display:inline-block; margin:0px; padding:0px;" class="content">
+
+            <h1 style="vertical-align: bottom;display: inline-block; margin-bottom:0px;">Manual de HTML y CSS</h1>
+            <small style="margin-left: 10px; vertical-align: bottom;display: inline-block;">(En desarrollo)</small><hr>
+
+            <!-- Artículo de Textos -->
+            <article id="artTextos">
+                <h1>Etiquetas de Texto</h1>
+                Poseemos distintas etiquetas de texto. Algunas de ellas son:<br>
+                <p>
+                    <a href="">&lt;b&gt;</a> - para <b>Negrita</b>, se utiliza para resaltar texto.<br><br>
+                    <a href="">&lt;i&gt;</a> - para <i>Itálica</i>, se utiliza para dar énfasis a un texto.<br><br>
+                    <a href="">&lt;u&gt;</a> - para <u>Subrayar</u>, se utiliza para dar énfasis a un texto.<br><br>
+                    <a href="">&lt;strong&gt;</a> - para resaltar y dar <strong>Importancia</strong> a un texto.<br><br>
+                    <a href="">&lt;h1&gt;</a> <a href="">&lt;h2&gt;</a> <a href="">&lt;h3&gt;</a> <a href="">&lt;h4&gt;</a> <a href="">&lt;h5&gt;</a> <a href="">&lt;h6&gt;</a> - Son distintos tipos de cabecera de texto, siendo <b>H1</b> la mas importante, y <b>H6</b> la de menor importancia.<br>
+                </p>
+
+                <h1>Hola Mundo! (H1)</h1>
+                <h2>Hola Mundo! (H2)</h2>
+                <h3>Hola Mundo! (H3)</h3>
+                <h4>Hola Mundo! (H4)</h4>
+                <h5>Hola Mundo! (H5)</h5>
+                <h6>Hola Mundo! (H6)</h6>
+
+                <a href="">&lt;article&gt;</a> - se utiliza para generar artículos con contenido variado.<br><br>
+                <a href="">&lt;p&gt;</a> - se utiliza para generar párrafos de texto.<br><br>
+                <a href="">&lt;br&gt;</a> - se utiliza para generar saltos de línea.<br><br>
+                <a href="">&lt;span&gt;</a> - se utiliza para generar <span style="color:red;">texto con estilo</span>.<br><br>
+                <a href="">&lt;pre&gt;</a> - se utiliza para generar texto preformateado.<br>
+
+                <pre>Soy un texto pre-formateado
+                    con saltos de línea
+                    y espacios
+                        y tabulaciones
+                    y caracteres especiales < > & " '
+                    <b>soy html</b>
+                </pre>
+
+                <hr>
+            </article>
+
+            <!-- Artículo de Links -->
+            <article id="artLinks">
+                <h1>Links</h1>
+                <p>Poseemos distintos tipos de enalces/Links:</p><br>
+
+
+                <a href="https://cei.es" target="_self" title="Cargar sitio web del CEI">link self (tradicional)</a><br>
+                <a href="https://cei.es" target="_blank" title="Cargar sitio web del CEI">link blank</a><br>
+                <!-- <a href="https://cei.es" target="_parent" title="Cargar sitio web del CEI">link parent</a><br>
+                <a href="https://cei.es" target="_top" title="Cargar sitio web del CEI">link top</a><br> -->
+                <a href="https://cei.es" target="_frame1" title="Cargar sitio web del CEI">link dentro de frame1</a><br>
+                <a href="https://cei.es" target="_frame2" title="Cargar sitio web del CEI">link dentro de frame2</a><br>
+        
+                frame 0
+                <iframe src="" frameborder="0" style="border:3px dashed #ef4444;padding:30px 0 0 30px;" srcdoc="<a target='_top' href='https://cei.es'>Link con target top</a><br><a target='_parent' href='https://cei.es'>Link con target parent</a>"></iframe>
+                frame 1
+                <iframe src="" name="_frame1" frameborder="1" style="width:200px;height:200px; padding:10px; margin:10px;" ></iframe>
+                frame 2
+                <iframe src="" name="_frame2" frameborder="1" style="width:200px;height:200px; padding:10px; margin:10px;" ></iframe>
+
+                
+                <br><br><a href="#artLinks" title="Utilizar un link a una sección propia de esta página">Enlace ancla</a> Podemos movernos dentro de este mismo documento utilizando el enlace Ancla con un ID específico <b>href="#idElemento"</b><br>
+
+                <hr>
+            </article>
+
+            <!-- Artículo de Tablas -->
+            <article id="artTablas">
+                <style>
+                    #tablaMascotas {
+                        margin: 10px auto;
+                        border-collapse: collapse; /* quitar borde entre celdas */
+                        border: 2px solid #333;
+                        width: 80%;
+                    }
+                    #tablaMascotas th, #tablaMascotas td {
+                        padding: 10px;
+                        text-align: left;
+                        border-bottom: 1px solid #ddd;
+                    }
+                    #tablaMascotas th {
+                        background-color: #333;
+                        color: #fff;
+                    }
+                </style>
+
+                <h1>Tablas</h1>
+                <p>Podemos crear tablas en HTML y estilarlas con CSS. Los tags de las tablas se agrupan en cabeceras, contenido y pie. Se declaran primero las filas, y luego las celdas separadas en columnas.</p>
+
+
+                <style>
+                    #tablaProps tr:nth-child(even) { background: #ddd }
+                    #tablaProps tr:nth-child(odd) { background: #fff}
+                </style>
+                <table id="tablaProps" style="border: 1px solid black; margin: auto; width: 70%;">
+                    <tbody>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Descripción</th>
+                        </tr>
+                        <tr>
+                            <td><a href="">&lt;table&gt;</a></td>
+                            <td>Define una Tabla</td>
+                        </tr>
+                        <tr>
+                            <td><a href="">&lt;thead&gt;</a></td>
+                            <td>Agrupa el contenido de cabeceras de la tabla</td>
+                        </tr>
+                        <tr>
+                            <td><a href="">&lt;tbody&gt;</a></td>
+                            <td>Agrupa el contenido del cuerpo de la tabla</td>
+                        </tr>
+                        <tr>
+                            <td><a href="">&lt;tfoot&gt;</a></td>
+                            <td>Agrupa el contenido del Pié de la tabla</td>
+                        </tr>
+                        <tr>
+                            <td><a href="">&lt;th&gt;</a></td>
+                            <td>Define una Celda como cabecera</td>
+                        </tr>
+                        <tr>
+                            <td><a href="">&lt;tr&gt;</a></td>
+                            <td>Define una Fila de la tabla</td>
+                        </tr>
+                        <tr>
+                            <td><a href="">&lt;td&gt;</a></td>
+                            <td>Define una Celda de la tabla</td>
+                        </tr>
+                        <tr>
+                            <td>Atributo <a href="">colspan</a></td>
+                            <td>Define el ancho de una celda en cantidad de celdas a ocupar: <b>&lt;td colspan="2" &gt;</b> ocupara 2 celdas de ancho.</td>
+                        </tr>
+                        <tr>
+                            <td>Otros atributos</td>
+                            <td>Se recomienda NO utilizar atributos estéticos de la tabla, en vez utilizar sus alternativas en CSS. Algunos de los atributos a evitar son: <b>cellpadding, bgcolor, border, cellspacing, width</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table id="tablaMascotas">
+                    <thead>
+                        <tr>
+                            <th>Atributo</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Willy</td>
+                        </tr>
+                        <tr>
+                            <td>Especie</td>
+                            <td>Perro</td>
+                        </tr>
+                        <tr>
+                            <td>Raza</td>
+                            <td>Golden Retriever</td>
+                        </tr>
+                        <tr>
+                            <td>Edad</td>
+                            <td>3 años</td>
+                        </tr>
+                        <tr>
+                            <td>Sexo</td>
+                            <td>Macho</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>Dorado</td>
+                        </tr>
+                        <tr>
+                            <td>Actividades Favoritas</td>
+                            <td>
+                                <ol>
+                                    <li>Correr en el parque</li>
+                                    <li>Perseguir animales</li>
+                                    <li>Buscar la pelota</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Comida Favorita</td>
+                            <td>
+                                <ul>
+                                    <li>Pescado</li>
+                                    <li>Pollo</li>
+                                    <li>Cerdo</li>
+                                    <li>Vegetales</li>
+                                    <li>Bolsas de Basura</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" style="text-align:center;">Pié de mi Tabla - Copyright 2023</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr>
+            </article>
+
+            <!-- Artículo de Colores -->
+            <article id="artColores">
+                <h2>Colores</h2>
+                <p>Agregar color a su texto HTML es fácil! En este breve tutorial veremos cómo cambiar el color de tu texto HTML con color en Hex los códigos, nombres de colores HTML, RGB y HSL valores.</p>
+
+                <h3>Color del texto con códigos de color HEX</h3>
+                <p>La forma más común de texto HTML coloración es mediante el uso de códigos de color hexadecimal (código Hex para abreviar). Sólo tienes que añadir un atributo de estilo al elemento de texto que desea de color - un párrafo en el siguiente ejemplo - y el uso de la propiedad de color con su codificación Hex.</p>
+                <!-- Método viejo de mostrar código, no se puede hacer mix de html + texto.
+                
+                <xmp>
+                    <p style="color:#FF0000";>Red paragraph text</p>
+                </xmp> -->
+
+                <pre>
+                    <code>
+                        &lt;p style="color:#FF0000;"&gt;<span style="color: #ff0000">Red paragraph text</span>&lt;/p&gt;
+                    </code>
+                </pre>
+       
+                <h3>Color del texto con nombres de colores HTML</h3>
+                <p>Otra forma de color texto de su sitio web es mediante un nombre de color HTML. El código HTML es similar, simplemente reemplace el código Hex en el paso anterior con el nombre del color que desee utilizar (rojo en nuestro ejemplo). Hay 140 colores para elegir.</p>
+                
+                <pre>
+                    <code>
+                        &lt;p style="color:blue;"&gt;<span style="color: blue">Blue paragraph text</span>&lt;/p&gt;
+                    </code>
+                </pre>
+
+                <h3>Color del texto utilizando los valores de los colores RGB</h3>
+                <p>Usando valores RGB para algunos genera rabia, pero es tan fácil como los códigos Hex o los nombres de los colores. Introduzca los valores de RGB en el rgb() parámetro después la propiedad color.</p>
+                
+                <pre>
+                    <code>
+                        &lt;p style="color:rgb(0,255,0);"&gt;<span style="color: rgb(0,255,0)">Green paragraph text</span>&lt;/p&gt;
+                    </code>
+                </pre>
+
+                <p>Cuando se utiliza un valor RGB en su sitio web, también puede especificar la opacidad. En lugar de rgb() utilizar rgba() - la a es para alfa, el canal del color que controla la opacidad, y después de su tres valores de color añadir un cuarto de opacidad, en una escala de 0 - 1 (0 para totalmente transparente, 1 para completamente opaco).</p>
+                <pre>
+                    <code>
+                        &lt;p style="color:rgba(0,0,0,0.5);"&gt;<span style="color: rgba(255,0,0, 0.5)">Opacity 50% of Red</span>&lt;/p&gt;
+                    </code>
+                </pre>
+
+                <h3>Color del texto utilizando los valores de los colores HSL  (Hue, Saturation, Lightness)</h3>
+                <p>Un cuarto método para añadir color HSL es mediante valores. Similar a la sintaxis que se describe arriba RGB, HSL utiliza la hsl() prefijo y tres valores de tono, saturación y luminosidad. El tono es representado en una escala de 0 a 360, mientras que saturación y luminosidad son un porcentaje entre el 0% y el 100%.</p>
+                
+                <pre>
+                    <code>
+                        &lt;p style="color:hsl(0,100%,50%);"&gt;<span style="color:hsl(0,100%,50%);">Red paragraph text</span>&lt;/p&gt;
+                    </code>
+                </pre>
+
+                <p>Y como con RGB también se le puede agregar un 4to parámetro para la opacidad utilizando hsla()</p>
+                <pre>
+                    <code>
+                        &lt;p style="color:hsla(0,100%,50%, 0.5);"&gt;<span style="color:hsla(0,100%,50%, 0.5);">Red paragraph text</span>&lt;/p&gt;
+                    </code>
+                </pre>
+
+                En conclusión, hay muchas maneras de mostrar los colores en nuestra web, y dependiendo el caso podremos utilizar el que prefiramos.<br>
+                Este es un <a href="https://htmlcolorcodes.com/es/" title="Selector de Color" target="_blank">Selector de Color</a> web que nos mostrará el mismo color en todas sus formas. <br>
+                También tenemos este selector y explicación de <a href="https://htmlcolorcodes.com/es/selector-de-color/" title="Selector de colores complementarios" target="_blank">Armonias de Colores</a> para utilizar en nuestros proyectos.
+                
+                <hr>
+            </article>
+
+
+            <!-- Selectores -->
+            <!-- <article id="artSelectores">
+                <h1>Selectores mediante ID y Clase</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati fugiat excepturi vel sint. Totam inventore asperiores earum quaerat doloremque optio voluptate cupiditate vel, eveniet itaque odit. Culpa sunt impedit repellat.
+                Nihil quas ipsa sequi atque quod suscipit labore aperiam, quis aliquid laborum dignissimos. Illo, nobis! Similique natus et porro molestiae ipsam sapiente possimus, optio omnis, quisquam tempore totam neque iste.</p>
+            </article> -->
+
+            <!-- Articulo X -->
+            <article id="artXXXX">
+                <h1>Articulo</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati fugiat excepturi vel sint. Totam inventore asperiores earum quaerat doloremque optio voluptate cupiditate vel, eveniet itaque odit. Culpa sunt impedit repellat.
+                Nihil quas ipsa sequi atque quod suscipit labore aperiam, quis aliquid laborum dignissimos. Illo, nobis! Similique natus et porro molestiae ipsam sapiente possimus, optio omnis, quisquam tempore totam neque iste.</p>
+                    <hr>
+            </article>
+            <!-- Articulo X -->
+            <article id="artXXXX">
+                <h1>Articulo</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati fugiat excepturi vel sint. Totam inventore asperiores earum quaerat doloremque optio voluptate cupiditate vel, eveniet itaque odit. Culpa sunt impedit repellat.
+                Nihil quas ipsa sequi atque quod suscipit labore aperiam, quis aliquid laborum dignissimos. Illo, nobis! Similique natus et porro molestiae ipsam sapiente possimus, optio omnis, quisquam tempore totam neque iste.</p>
+                    <hr>
+            </article>
+            <!-- Articulo X -->
+            <article id="artXXXX">
+                <h1>Articulo</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati fugiat excepturi vel sint. Totam inventore asperiores earum quaerat doloremque optio voluptate cupiditate vel, eveniet itaque odit. Culpa sunt impedit repellat.
+                Nihil quas ipsa sequi atque quod suscipit labore aperiam, quis aliquid laborum dignissimos. Illo, nobis! Similique natus et porro molestiae ipsam sapiente possimus, optio omnis, quisquam tempore totam neque iste.</p>
+                    <hr>
+            </article>
+
+        </div>
+    </div>
+
+</body>
+</html>
