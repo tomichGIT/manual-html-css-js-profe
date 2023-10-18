@@ -15,6 +15,7 @@
 
         body {
             margin:0px;
+            font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
         }
 
         #miSitio {
@@ -52,6 +53,14 @@
         .sidebar ul {
             margin: 10px;
         }
+
+
+        .code {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace;
+        }
       </style>
 </head>
 <body>
@@ -63,6 +72,7 @@
             <ul style="margin:0px;">
                 <li><a href="#artTextos">Texto</a></li>
                 <li><a href="#artLinks">Links</a></li>
+                <li><a href="#artCenterDiv">Centrar un DIV</a></li>
                 <li><a href="#artTablas">Tablas</a></li>
                 <li><a href="#artColores">Colores</a></li>
                 <li><a href="#artLayout">Layout Tags</a></li>
@@ -104,12 +114,12 @@
                 <a href="">&lt;p&gt;</a> - se utiliza para generar párrafos de texto.<br><br>
                 <a href="">&lt;br&gt;</a> - se utiliza para generar saltos de línea.<br><br>
                 <a href="">&lt;span&gt;</a> - se utiliza para generar <span style="color:red;">texto con estilo</span>.<br><br>
-                <a href="">&lt;pre&gt;</a> - se utiliza para generar texto preformateado.<br>
+                <a href="">&lt;pre&gt;</a> - se utiliza para generar texto preformateado. Muy utilizado para mostrar código.<br>
 
-                <pre>Soy un texto pre-formateado
-                    con saltos de línea
-                    y espacios
-                        y tabulaciones
+                <pre class="code">Soy un texto pre-formateado
+                    con saltos de línea,
+                    espacios,
+                        tabulaciones
                     y caracteres especiales < > & " '
                     <b>soy html</b>
                 </pre>
@@ -120,27 +130,126 @@
             <!-- Artículo de Links -->
             <article id="artLinks">
                 <h1>Links</h1>
-                <p>Poseemos distintos tipos de enalces/Links:</p><br>
+                <p>Poseemos distintos tipos de enalces/Links probaremos abrir la web de <b>https://CEI.es</b>:</p><br>
 
 
-                <a href="https://cei.es" target="_self" title="Cargar sitio web del CEI">link self (tradicional)</a><br>
-                <a href="https://cei.es" target="_blank" title="Cargar sitio web del CEI">link blank</a><br>
-                <!-- <a href="https://cei.es" target="_parent" title="Cargar sitio web del CEI">link parent</a><br>
-                <a href="https://cei.es" target="_top" title="Cargar sitio web del CEI">link top</a><br> -->
-                <a href="https://cei.es" target="_frame1" title="Cargar sitio web del CEI">link dentro de frame1</a><br>
-                <a href="https://cei.es" target="_frame2" title="Cargar sitio web del CEI">link dentro de frame2</a><br>
+                <a href="https://cei.es" target="_self" title="Cargar sitio web del CEI">Enlace self</a> Abrir el enlace en esta misma página<br>
+                <a href="https://cei.es" target="_blank" title="Cargar sitio web del CEI">Enlace blank</a> Abrir el enlace en una pestaña Nueva<br>
+                <a href="https://cei.es" target="_frame1" title="Cargar sitio web del CEI">Enlace dentro de frame1</a> Abrir el enlace dentro del Frame 1 utilizando <b>target="nombreDelFrame1"</b><br>
+                <a href="https://cei.es" target="_frame2" title="Cargar sitio web del CEI">Enlace dentro de frame2</a> Abrir el enlace dentro del Frame 2 utilizando <b>target="nombreDelFrame2"</b><br>
+                <a href="#artLinks" title="Utilizar un link a una sección propia de esta página">Enlace Anchor</a> Podemos movernos dentro de este mismo documento utilizando el enlace Ancla con un ID específico <b>href="#idElemento"</b><br>
+
+                <table style="width:100%;">
+                    <tr>
+                        <td style="width:33%;">
+                            frame 0<br>
+                            <iframe src="" frameborder="0" style="border:3px dashed #ef4444;height:200px;padding:30px 0 0 30px;" srcdoc="<a target='_top' href='https://cei.es'>Link con target top</a><br><a target='_parent' href='https://cei.es'>Link con target parent</a>"></iframe>
+                        </td>
+                        <td style="width:33%;">
+                            frame 1<br>
+                            <iframe src="" name="_frame1" frameborder="1" style="border:3px dashed #efec44; width:200px;height:200px; padding:10px; margin:10px;" ></iframe>
+                        </td>
+                        <td style="width:33%;">
+                            frame 2<br>
+                            <iframe src="" name="_frame2" frameborder="1" style="width:200px;height:200px; padding:10px; margin:10px;" ></iframe>
+                        </td>
+                    </tr>
+                </table>
         
-                frame 0
-                <iframe src="" frameborder="0" style="border:3px dashed #ef4444;padding:30px 0 0 30px;" srcdoc="<a target='_top' href='https://cei.es'>Link con target top</a><br><a target='_parent' href='https://cei.es'>Link con target parent</a>"></iframe>
-                frame 1
-                <iframe src="" name="_frame1" frameborder="1" style="width:200px;height:200px; padding:10px; margin:10px;" ></iframe>
-                frame 2
-                <iframe src="" name="_frame2" frameborder="1" style="width:200px;height:200px; padding:10px; margin:10px;" ></iframe>
-
-                
-                <br><br><a href="#artLinks" title="Utilizar un link a una sección propia de esta página">Enlace ancla</a> Podemos movernos dentro de este mismo documento utilizando el enlace Ancla con un ID específico <b>href="#idElemento"</b><br>
+            
 
                 <hr>
+            </article>
+
+            <!-- Artículo de Center Div  -->
+            <article id="artCenterDiv">
+
+                <h3>Centrar un DIV</h3>
+                <p>Se sabe que centrar un div sin utilizar Flexbox puede ser una tarea muy difícilo para muchos desarrolladores y diseñadores. A continuación mostraremos algunas maneras de centrar elementos vertical y horizontalmente.</p>
+                <img class="meme center-v center-h" src="https://pbs.twimg.com/media/EC7NlSNXsAEW4cw.jpg" alt="center div meme">
+                <img class="meme center-v center-h" src="https://miro.medium.com/v2/resize:fit:651/1*rf4QAy4yYPdfuLsZ7NrHZA.jpeg" alt="center div meme">
+                <img class="meme center-v center-h" src="https://pbs.twimg.com/media/ESvZjcOWoAICzn_.jpg" alt="center div meme">
+                <img class="meme center-v center-h" src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*Qd3B_lzhjVlhclb0tkWnTQ.jpeg" alt="center div meme">
+                <img class="meme center-v center-h" src="https://programmerhumor.io/wp-content/uploads/2023/05/programmerhumor-io-databases-memes-backend-memes-1e883fa8146baf6.png" alt="center div meme">
+                <img class="meme center-v center-h" src="https://i.imgur.com/Wy5c2Kb.jpg" alt="center div meme">
+
+
+
+                <h4>Centrar Horizontalmente</h4>
+
+                Utilizando Margen Automático:
+                <pre class="code"><span class="">&lt;div style="max-width:25%;margin: 0 auto;"&gt;Centered&lt;/div&gt;</span></pre>
+
+                <div style="max-width:25%;margin: 0 auto; text-align:center;">
+                        <img src="img/profile_female.png" alt="Foto de Perfil" style="width:200px;">
+                        <div>María Laura</div>
+                </div>
+
+                Utilizando Inline-block:
+                <pre class="code"><span class="">&lt;div style="text-align:center;"&gt;<br>  &lt;div style="display: inline-block;"&gt;Centered&lt;/div&gt;<br>&lt;/div&gt;</span></pre>
+
+                <div style="text-align:center;">
+                        <img src="img/profile_female.png" alt="Foto de Perfil" style="width:200px;">
+                        <div>María Laura</div>
+                </div>
+
+                <h4>Centrado Vertical</h4>
+                <pre class="code"><span class="">&lt;div style="vertical-align:middle;display:inline-block;"&gt;</span></pre>
+
+                <style>
+
+                    #artCenterDiv .meme {
+                        width: 25vw;
+                        max-height: 350px;
+                    }
+
+                    /* Centrado Vertical */
+                    #artCenterDiv .center-v {
+                        vertical-align: middle;
+                        display: inline-block;
+                    }
+                    /* Centrado Horizontal  */
+                    #artCenterDiv .center-h {
+                        text-align:center;
+                    }
+
+                    /*
+                    .all-center-rules {
+                        /* Centrado horizontal  * /
+                        text-align: center;
+                        margin: 0 auto;
+
+                        /* Reglas de Centrado con Flex * /
+                        align-items: center;
+                        align-self: center;
+                        align-content: center;
+                        justify-content: center;
+                        justify-self: center;
+                        justify-items: center;
+
+                        /* Reglas de Centrado con Grid * /
+                        place-items: center;
+                        vertical-align: middle;
+                        line-height: 100%;
+
+                        /* Centrado posición absoluta (1 item) * /
+                        position: absolute;
+                        left: 50%;
+                        right: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    */
+                </style>
+
+                <div class="center-h">
+                    <div class="center-v">
+                        <img src="img/profile_female.png" alt="Foto de Perfil" style="width:200px;">
+                    </div>
+                    <div class="center-v">María Laura</div>
+                </div>
+
+                <hr>
+
             </article>
 
             <!-- Artículo de Tablas -->
@@ -284,7 +393,7 @@
             <article id="artLayout">
 
                 <h3>Layout Tags</h3>
-                <h3>Las Tags de Disposición/Layout nos permiten acomodar nuestros elementos en la web. Segmentando nuestrá página en partes, es mas fácil identificar y desarrollar la misma.</h3>
+                <p>Las Tags de Disposición/Layout nos permiten acomodar nuestros elementos en la web. Segmentando nuestrá página en partes, es mas fácil identificar y desarrollar la misma.</p>
 
                 <div style="text-align:center;">
                     <img src="img/layout.png" alt="">
@@ -353,51 +462,45 @@
                     <p style="color:#FF0000";>Red paragraph text</p>
                 </xmp> -->
 
-                <pre>
+                <pre class="code">
                     <code>
-                        &lt;p style="color:#FF0000;"&gt;<span style="color: #ff0000">Red paragraph text</span>&lt;/p&gt;
-                    </code>
+                        &lt;p style="color:#FF0000;"&gt;<span style="color: #ff0000">Red paragraph text</span>&lt;/p&gt;</code>
                 </pre>
        
                 <h3>Color del texto con nombres de colores HTML</h3>
                 <p>Otra forma de color texto de su sitio web es mediante un nombre de color HTML. El código HTML es similar, simplemente reemplace el código Hex en el paso anterior con el nombre del color que desee utilizar (rojo en nuestro ejemplo). Hay 140 colores para elegir.</p>
                 
-                <pre>
+                <pre class="code">
                     <code>
-                        &lt;p style="color:blue;"&gt;<span style="color: blue">Blue paragraph text</span>&lt;/p&gt;
-                    </code>
+                        &lt;p style="color:blue;"&gt;<span style="color: blue">Blue paragraph text</span>&lt;/p&gt;</code>
                 </pre>
 
                 <h3>Color del texto utilizando los valores de los colores RGB</h3>
                 <p>Usando valores RGB para algunos genera rabia, pero es tan fácil como los códigos Hex o los nombres de los colores. Introduzca los valores de RGB en el rgb() parámetro después la propiedad color.</p>
                 
-                <pre>
+                <pre class="code">
                     <code>
-                        &lt;p style="color:rgb(0,255,0);"&gt;<span style="color: rgb(0,255,0)">Green paragraph text</span>&lt;/p&gt;
-                    </code>
+                        &lt;p style="color:rgb(0,255,0);"&gt;<span style="color: rgb(0,255,0)">Green paragraph text</span>&lt;/p&gt;</code>
                 </pre>
 
                 <p>Cuando se utiliza un valor RGB en su sitio web, también puede especificar la opacidad. En lugar de rgb() utilizar rgba() - la a es para alfa, el canal del color que controla la opacidad, y después de su tres valores de color añadir un cuarto de opacidad, en una escala de 0 - 1 (0 para totalmente transparente, 1 para completamente opaco).</p>
-                <pre>
+                <pre class="code">
                     <code>
-                        &lt;p style="color:rgba(0,0,0,0.5);"&gt;<span style="color: rgba(255,0,0, 0.5)">Opacity 50% of Red</span>&lt;/p&gt;
-                    </code>
+                        &lt;p style="color:rgba(0,0,0,0.5);"&gt;<span style="color: rgba(255,0,0, 0.5)">Opacity 50% of Red</span>&lt;/p&gt;</code>
                 </pre>
 
                 <h3>Color del texto utilizando los valores de los colores HSL  (Hue, Saturation, Lightness)</h3>
                 <p>Un cuarto método para añadir color HSL es mediante valores. Similar a la sintaxis que se describe arriba RGB, HSL utiliza la hsl() prefijo y tres valores de tono, saturación y luminosidad. El tono es representado en una escala de 0 a 360, mientras que saturación y luminosidad son un porcentaje entre el 0% y el 100%.</p>
                 
-                <pre>
+                <pre class="code">
                     <code>
-                        &lt;p style="color:hsl(0,100%,50%);"&gt;<span style="color:hsl(0,100%,50%);">Red paragraph text</span>&lt;/p&gt;
-                    </code>
+                        &lt;p style="color:hsl(0,100%,50%);"&gt;<span style="color:hsl(0,100%,50%);">Red paragraph text</span>&lt;/p&gt;</code>
                 </pre>
 
                 <p>Y como con RGB también se le puede agregar un 4to parámetro para la opacidad utilizando hsla()</p>
-                <pre>
+                <pre class="code">
                     <code>
-                        &lt;p style="color:hsla(0,100%,50%, 0.5);"&gt;<span style="color:hsla(0,100%,50%, 0.5);">Red paragraph text</span>&lt;/p&gt;
-                    </code>
+                        &lt;p style="color:hsla(0,100%,50%, 0.5);"&gt;<span style="color:hsla(0,100%,50%, 0.5);">Red paragraph text</span>&lt;/p&gt;</code>
                 </pre>
 
                 En conclusión, hay muchas maneras de mostrar los colores en nuestra web, y dependiendo el caso podremos utilizar el que prefiramos.<br>
