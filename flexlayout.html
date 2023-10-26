@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de flexbox layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin:0px;
+            padding:0px;
+        }
+    </style>
+
+    <style>
+        header {
+            background-color: blueviolet;
+            padding:20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            flex-direction: row; /* por defecto es row */
+            justify-content: space-around;
+            background-color: gray;
+            /* padding: 10px; */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .row section {
+            padding:10px;
+            background-color: chocolate;
+
+            flex: 70%;
+            /* flex-grow:70%;
+            flex-shrink: 0;
+            flex-basis: auto; */
+            
+        }
+        .row aside{
+            padding:10px;
+            background-color: aqua;
+
+            flex: 30px;
+            /* flex-grow:30px;
+            flex-shrink: 0;
+            flex-basis: auto; */
+            
+        }
+
+        footer {
+            background-color: red;
+            padding:20px;
+            text-align: center;
+        }
+    </style>
+
+  
+</head>
+<body>
+    <header>soy header</header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Contacto</a>
+        <a href="#">Galeria</a>
+        <a href="#">Perfil</a>
+    </nav>
+
+    <div class="row">
+        <section>
+            <h2>Contenido</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex iusto ipsam nobis consequuntur, magni sequi distinctio repellendus animi ipsum cum, fugit aspernatur a necessitatibus sed. Aliquid minus quidem quisquam nobis.
+        </section>
+        <aside>
+            <h2>Navbar</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex iusto ipsam nobis consequuntur, magni sequi distinctio repellendus animi ipsum cum, fugit aspernatur a necessitatibus sed. Aliquid minus quidem quisquam nobis.
+        </aside>
+    </div>
+
+    <footer>soy footer</footer>
+</body>
+</html>

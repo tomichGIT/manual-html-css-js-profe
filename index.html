@@ -159,7 +159,9 @@
                 <img class="meme center-v center-h"
                     src="https://programmerhumor.io/wp-content/uploads/2023/05/programmerhumor-io-databases-memes-backend-memes-1e883fa8146baf6.png"
                     alt="center div meme">
-                <img class="meme center-v center-h" src="https://i.imgur.com/Wy5c2Kb.jpg" alt="center div meme">
+                <!-- <img class="meme center-v center-h" src="https://i.imgur.com/Wy5c2Kb.jpg" alt="center div meme"> -->
+                <img class="meme center-v center-h" src="https://i.kym-cdn.com/photos/images/newsfeed/002/124/456/596.jpg" alt="center div meme">
+                
 
 
 
@@ -543,25 +545,18 @@
                     de contraseña, casillas de verificación, botones de opción, botones de envío, menús, etc.
                     <br>Los formularios estan definidios por las etiquetas <b>&lt;form&gt;</b> y <b>&lt;/form&gt;</b>
                 </p>
-
-                <p>A continuación especificaremos las etiquetas mas importantes:</p>
-                <!-- <p>A continuación se muestra un ejemplo que contiene tres elementos <b>&lt;input&gt;</b> y dos elementos <b>&lt;label&gt;</b></p>
-
-                    <pre  class="language-html">
-                        <code>
-                            <form action="/html/tags/html_form_tag_action.cfm" target="_blank" method="get">
-                                <p>
-                                  <label>First name: </label>
-                                  <input type="text" name="first_name" maxlength="100" style="width:120px;" >
-                                </p>
-                                <p>
-                                  <label>Last name: </label>
-                                  <input type="text" name="last_name" maxlength="100" style="width:120px;" />
-                                </p>
-                                <input type="submit" value="Submit">
-                                </form>
-                        </code>
-                    </pre> -->
+                <p>
+                    Suelen llevar los siguientes atributos:<br>
+                    <ul>
+                        <li><b>name</b> define el nombre del input.</li>
+                        <li><b>value</b> define el valor predeterminado del input.</li>
+                        <li><b>placeholder</b> define un texto sustitutivo para guiar al usuario.</li>
+                        <li><b>id</b> suele ser el identificar de las etiquetas label con atributo "for".</li>
+                    </ul>
+                </p>
+                <p>
+                    Las siguientes son las etiquetas HTML mas comunes en formularios:
+                </p>
 
                 <!-- <script>
                         hljs.highlightAll();
@@ -586,6 +581,7 @@
                         width: 70%;
                     }
                 </style>
+
                 <table id="tablaForms">
                     <tbody>
                         <tr>
@@ -595,6 +591,14 @@
                         <tr>
                             <td><a href="">&lt;form&gt;</a></td>
                             <td>Define un formulario</td>
+                        </tr>
+                        <tr>
+                            <td><a href="">&lt;fieldset&gt;</a></td>
+                            <td>Agrupa una serie de elementos dentro del formulario</td>
+                        </tr>
+                        <tr>
+                            <td><a href="">&lt;legend&gt;</a></td>
+                            <td>Define un texto extra del formulario</td>
                         </tr>
                         <tr>
                             <td><a href="">&lt;input&gt;</a></td>
@@ -944,7 +948,7 @@
                         <legend> Información Básica</legend>
 
                         <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="user_name">
+                        <input type="text" id="name" name="user_name" placeholder="Tu nombre">
 
                         <label for="email">Correo electrónico:</label>
                         <input type="email" id="mail" name="user_email">

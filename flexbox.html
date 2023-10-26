@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Flexbox</title>
+    <style>
+       /* Background Styles */
+        html {
+            height: 100%;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        html a {
+            color:white;
+        }
+        
+
+        .flexbox-item-1 {
+            min-height: 100px;
+        }
+
+        .flexbox-item-2 {
+            min-height: 200px;
+        }
+
+        .flexbox-item-3 {
+            min-height: 300px;
+        }
+
+        .flexbox-container {
+            position: relative;
+            background-color: yellow;
+        }
+
+        .flexbox-container::before {
+            content: 'Flexbox Container';
+            position: absolute;
+            top: -40px;
+            color: yellow;
+            font-size: 2em;
+        }
+
+        .axis {
+            position: absolute;
+        }
+
+        .cross-axis {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5px;
+            height: 100%;
+            background-color: blue;
+        }
+
+        .main-axis {
+            top: 50%;
+            transform: translateY(-50%);
+            height: 5px;
+            width: 100%;
+            background-color: red;
+        }
+
+        .axis::after {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 2em;
+        }
+
+        .main-axis::after {
+            position: absolute;
+            content: 'Main Axis';
+            color: red;
+        }
+
+        .cross-axis::after {
+            white-space: nowrap;
+            content: 'Cross Axis';
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: blue;
+        }
+
+        .flexbox-item {
+            position: relative;
+            width: 200px;
+            margin: 10px;
+            border: 3px solid #333;
+            background-color: #dfdfdf;
+            font-size: 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .flexbox-item::before {
+            content: 'Flexbox Item';
+            position: absolute;
+            color: black;
+            font-size: 25px;
+            top: 10px;
+            left: 15px;
+        }
+
+        .flexbox-item::after {
+            position: absolute;
+            color: black;
+            font-size: 25px;
+            top: 10px;
+            right: 15px;
+        }
+
+        .flexbox-item-1::after {
+            content: '1';
+        }
+
+        .flexbox-item-2::after {
+            content: '2';
+        }
+
+        .flexbox-item-3::after {
+            content: '3';
+        }
+
+        .flexbox-item-4::after {
+            content: '4';
+        }
+
+        .flexbox-item-5::after {
+            content: '5';
+        }
+
+        .flexbox-item-6::after {
+            content: '6';
+        }
+    </style>
+
+    <style>
+        
+        p {
+            margin-bottom:50px;
+        }
+
+        .flexbox-container {
+            display:flex; 
+
+            /* alineación horizontal */
+            flex-direction: row; /* row | row-reverse | column | column-reverse */
+            justify-content: space-around; /* flex-start | flex-end | center | space-between | space-around */
+
+
+            /* alineación vertical */
+            align-items: stretch; /* stretch | flex-start | flex-end | center | baseline */
+
+
+            /* cuando poseo multiple lineas de flex */
+            /* flex-wrap: wrap;
+            height: 700px;
+            align-content: space-between; flex-start | flex-end | center | space-between | space-around | stretch */
+
+        }
+
+        .flexbox-item {
+            border: 3px solid #333;
+            background:#dfdfdf;
+            margin:10px;
+            width: 200px;
+            font-size: unset;
+        }
+        .flexbox-item-1 {
+            min-height: 100px;
+            flex-shrink: 0;
+
+            /* sobreesribe los valore sde "align-items" del container */
+            align-self: flex-end;
+        }
+        .flexbox-item-2 {
+            min-height: 200px;
+            flex-grow: 2;
+            flex-basis: 0px;
+
+            /* sobreesribe los valore sde "align-items" del container */
+            align-self: center;
+        }
+        .flexbox-item-3 {
+            min-height: 300px;
+            /* flex: 1 0 200px; */
+
+            flex-grow:1;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.youtube.com/watch?v=fYq5PXgSsbE" target="_blank">Flexbox en 15min</a><br><br>
+    Opciones de container:
+    <ol style="margin-bottom:80px;">
+        <li>Flexbox me permite editar los estilos de los elementos desde dentro del container, sin tener que convertir en Flex a cada item</li>
+        <li>Solo por utilizar display:flex ya todos mis items van a tener el mismo alto y se van a alinear de izq a der (row)</li>
+        <li>Flex direction me va a permitir decidir si trabajo en una Row o una Column</li>
+    </ol>
+    Opciones de items:
+    <ol>
+        <li>Los items también se pueden modificar. Flex-shrink=0 indica que no debe achicarse. Flex-grow=1 indica que debe ocupar mas espacio</li>
+        <li>Para manejar el monto de grow y shrink puedo elegir desde que ancho comenzar usando flex-basis</li>
+        <li>Puedo usar un shorthand de grow shrink y basis con "flex: 0 1 25px"; </li>
+        <li>Cada item puede tener el valor "order" para re-ordenar los items (no recomendados para Tab y eReaders)</li>
+    </ol>
+    <div class="flexbox-container">
+        <div class="flexbox-item flexbox-item-1"></div>
+        <div class="flexbox-item flexbox-item-2"></div>
+        <div class="flexbox-item flexbox-item-3"></div>
+        <div class="axis main-axis"></div>
+        <div class="axis cross-axis"></div>
+    </div>
+
+
+
+    <style>
+        /* CSS Flex del Ejemplo 1 */
+        #ejemplo1 .flexbox-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        
+        #ejemplo1 .flexbox-item {
+          width: 100px;
+          height: 100px;
+          background-color: #3498db;
+          margin: 5px;
+        }
+        
+        /* .axis {
+          height: 2px;
+          background-color: #e74c3c;
+          width: 100%;
+          margin: 10px 0;
+        }
+        
+        .main-axis {
+          background-color: #2ecc71;
+        }
+        
+        .cross-axis {
+          background-color: #f1c40f;
+        } */
+        </style>
+    <h1>Ejemplo 1</h1>
+    <p>En este ejemplo, se muestran los atributos de Flexbox:</p>
+    <ul>
+    <li><strong>display: flex</strong> - Activa el modelo de caja flexible en el contenedor.</li>
+    <li><strong>justify-content: space-between</strong> - Distribuye los elementos a lo largo del eje principal con espaciado uniforme entre ellos.</li>
+    <li><strong>align-items: center</strong> - Centra los elementos a lo largo del eje cruzado.</li>
+    <li><strong>flex-direction: row</strong> - Establece la dirección principal como horizontal (fila).</li>
+    <li><strong>flex-wrap: wrap</strong> - Permite que los elementos se envuelvan a la siguiente fila cuando no caben en el contenedor.</li>
+    </ul>
+    <div id="ejemplo1" class="flexbox-container">
+    <div class="flexbox-item flexbox-item-1"></div>
+    <div class="flexbox-item flexbox-item-2"></div>
+    <div class="flexbox-item flexbox-item-3"></div>
+    <div class="axis main-axis"></div>
+    <div class="axis cross-axis"></div>
+    </div>
+
+    <style>
+        .flexbox-item {
+            height: 200px;
+        }
+    </style>
+
+    <p>Este ejemplo ilustra cómo la propiedad flex-grow afecta el crecimiento de elementos en un contenedor.</p>
+    <div id="ejemplo-grow" class="flexbox-container">
+        <div class="flexbox-item flexbox-item-1x" style="flex-grow: 1;">Elemento 1 (flex-grow: 1)</div>
+        <div class="flexbox-item flexbox-item-2x" style="flex-grow: 2;">Elemento 2 (flex-grow: 2)</div>
+        <div class="flexbox-item flexbox-item-3x" style="flex-grow: 1;">Elemento 3 (flex-grow: 1)</div>
+      </div>
+
+      
+    <p>En este ejemplo, se muestra cómo la propiedad flex-shrink afecta la contracción de elementos en un contenedor.</p>
+    <div id="ejemplo-shrink" class="flexbox-container">
+        <div class="flexbox-item flexbox-item-1x" style="flex-shrink: 2;">Elemento 1 (flex-shrink: 2)</div>
+        <div class="flexbox-item flexbox-item-2x" style="flex-shrink: 1;">Elemento 2 (flex-shrink: 1)</div>
+        <div class="flexbox-item flexbox-item-3x" style="flex-shrink: 3;">Elemento 3 (flex-shrink: 3)</div>
+      </div>
+      
+
+      <p>Este ejemplo muestra cómo la propiedad flex-basis define el tamaño inicial de elementos en un contenedor.</p>
+    <div id="ejemplo-basis" class="flexbox-container">
+        <div class="flexbox-item flexbox-item-1x" style="flex-basis: 100px;">Elemento 1 (flex-basis: 100px)</div>
+        <div class="flexbox-item flexbox-item-2x" style="flex-basis: 200px;">Elemento 2 (flex-basis: 200px)</div>
+        <div class="flexbox-item flexbox-item-3x" style="flex-basis: 150px;">Elemento 3 (flex-basis: 150px)</div>
+      </div>
+      
+
+</body>
+</html>
